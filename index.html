@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoLink - Portal Escolar Sustentável</title>
+    
+    <!-- Tailwind CSS (Estilização rápida) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Phosphor Icons (Ícones bonitos) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Fonte Google (Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Estilos Personalizados -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen pb-20 md:pb-0">
+
+    <!-- NAVBAR -->
+    <nav class="bg-white/80 sticky top-0 z-40 border-b border-slate-200/80 shadow-sm backdrop-blur-lg">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <!-- Logo -->
+                <div class="flex items-center gap-2 cursor-pointer" onclick="switchTab('home')">
+                    <div class="bg-emerald-600 p-2 rounded-lg">
+                        <i class="ph-fill ph-plant text-white text-2xl"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-emerald-700">
+                        EcoLink
+                    </span>
+                </div>
+                
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex items-center gap-8">
+                    <button onclick="switchTab('home')" id="btn-home" class="nav-btn flex items-center gap-2 font-medium text-emerald-600 transition-colors hover:text-emerald-500">
+                        <i class="ph ph-house"></i> Início
+                    </button>
+                    <button onclick="switchTab('feed')" id="btn-feed" class="nav-btn flex items-center gap-2 font-medium text-gray-500 hover:text-emerald-500">
+                        <i class="ph ph-recycle"></i> Boas Práticas
+                    </button>
+                    <button onclick="switchTab('ranking')" id="btn-ranking" class="nav-btn flex items-center gap-2 font-medium text-gray-500 hover:text-emerald-500">
+                        <i class="ph ph-trophy"></i> Ranking & Enquete
+                    </button>
+                    <button onclick="switchTab('about')" id="btn-about" class="nav-btn flex items-center gap-2 font-medium text-gray-500 hover:text-emerald-500">
+                        <i class="ph ph-users"></i> Sobre Nós
+                    </button>
+                </div>
+
+                <!-- Botão Mobile -->
+                <div class="md:hidden text-emerald-600">
+                    <button onclick="switchTab('feed')"><i class="ph-bold ph-plus-circle text-3xl"></i></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- VIEW: HOME -->
+        <div id="view-home" class="fade-in">
+            <!-- Hero Section -->
+            <div class="bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-2xl p-8 md:p-12 text-white relative overflow-hidden mb-10">
+                <i class="ph-fill ph-leaf absolute -top-8 -right-8 opacity-10 text-[200px] rotate-12"></i>
+                
+                <div class="relative z-10 max-w-2xl">
+                    <div class="flex items-center gap-2 mb-4 bg-white/10 w-fit px-3 py-1 rounded-full text-sm font-medium backdrop-blur-sm border border-white/20">
+                        <i class="ph ph-recycle"></i>
+                        <span>Projeto Modelo • ECIT Elpidio de Almeida</span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+                        Conectando Escolas,<br />Inspirando Ações.
+                    </h1>
+                    <p class="text-lg text-emerald-100 mb-8 max-w-xl">
+                        O <strong>EcoLink</strong> é o seu portal escolar para compartilhar boas práticas de sustentabilidade. 
+                        Transforme sua escola e ajude o planeta, uma ação de cada vez.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <button onclick="switchTab('feed')" class="bg-white text-emerald-700 px-6 py-3 rounded-lg font-bold hover:bg-emerald-50 flex items-center gap-2 shadow-md hover:shadow-lg hover:-translate-y-0.5">
+                            Ver Boas Práticas <i class="ph-bold ph-arrow-right"></i>
+                        </button>
+                        <button onclick="switchTab('ranking')" class="bg-transparent border border-emerald-400 text-white px-6 py-3 rounded-lg font-bold hover:bg-white/10 backdrop-blur-md">
+                            Ranking Escolar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ODS Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                <!-- ODS 4 -->
+                <div class="bg-white p-6 rounded-xl border border-slate-200 flex items-start gap-4 card-hover hover:border-emerald-300 hover:shadow-md">
+                    <div class="bg-red-500 w-12 h-12 shrink-0 rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-md">4</div>
+                    <div>
+                        <h4 class="font-bold text-gray-800 mb-1">Educação de Qualidade</h4>
+                        <p class="text-sm text-gray-500">Garantir educação inclusiva, equitativa e de qualidade.</p>
+                    </div>
+                </div>
+                <!-- ODS 12 -->
+                <div class="bg-white p-6 rounded-xl border border-slate-200 flex items-start gap-4 card-hover hover:border-emerald-300 hover:shadow-md">
+                    <div class="bg-yellow-600 w-12 h-12 shrink-0 rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-md">12</div>
+                    <div>
+                        <h4 class="font-bold text-gray-800 mb-1">Consumo Responsável</h4>
+                        <p class="text-sm text-gray-500">Assegurar padrões de produção e de consumo sustentáveis.</p>
+                    </div>
+                </div>
+                <!-- ODS 13 -->
+                <div class="bg-white p-6 rounded-xl border border-slate-200 flex items-start gap-4 card-hover hover:border-emerald-300 hover:shadow-md">
+                    <div class="bg-green-600 w-12 h-12 shrink-0 rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-md">13</div>
+                    <div>
+                        <h4 class="font-bold text-gray-800 mb-1">Ação Contra a Mudança</h4>
+                        <p class="text-sm text-gray-500">Tomar medidas urgentes para combater a mudança climática.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sobre -->
+            <div class="bg-white p-8 rounded-xl border border-slate-200">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+                    <i class="ph-fill ph-info text-emerald-500"></i> Sobre o Projeto
+                </h3>
+                <p class="text-gray-600 mb-4">
+                    Desenvolvido pelos alunos do curso de <strong>Desenvolvimento de Sistemas</strong>, o EcoLink visa aproximar a tecnologia da consciência ambiental.
+                </p>
+                <div class="text-sm text-gray-500 pt-4 border-t border-slate-200">
+                    Autores: João Lucas, Pedro Miguel, Rafael Medeiros, Alex Bruno, Pedro Henrique.<br/>
+                    Orientador: Ryan Marcelino Gomes Felix dos Santos.
+                </div>
+            </div>
+        </div>
+
+        <!-- VIEW: FEED -->
+        <div id="view-feed" class="hidden-view fade-in max-w-3xl mx-auto">
+            <div class="flex justify-between items-center mb-8">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-800">Mural de Boas Práticas</h2>
+                    <p class="text-gray-500 mt-1">Veja o que as escolas estão fazendo pelo planeta.</p>
+                </div>
+                <button onclick="openModal()" class="bg-emerald-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-emerald-700 flex items-center gap-2 shadow-md hover:shadow-lg hover:-translate-y-0.5">
+                    <i class="ph-bold ph-plus"></i> <span class="hidden md:inline">Registrar Ação</span>
+                </button>
+            </div>
+
+            <!-- Filtros e Busca do Feed -->
+            <div class="mb-6">
+                <label for="search-input" class="block text-sm font-medium text-gray-700 mb-1">Buscar no mural:</label>
+                <div class="relative">
+                    <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                    <input id="search-input" type="text" placeholder="Busque por título ou descrição..." class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none">
+                </div>
+            </div>
+
+            <!-- Container dos Posts -->
+            <div id="posts-container" class="space-y-6">
+                <!-- Posts serão injetados via JS aqui -->
+            </div>
+        </div>
+
+        <!-- VIEW: RANKING -->
+        <div id="view-ranking" class="hidden-view fade-in max-w-4xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Ranking de Engajamento</h2>
+                <p class="text-gray-500">Escolas que mais contribuem para um futuro sustentável.</p>
+            </div>
+
+            <div id="ranking-container" class="grid gap-4">
+                <!-- Ranking injetado via JS -->
+            </div>
+
+            <!-- Enquete -->
+            <div class="mt-12 bg-emerald-700 text-white rounded-2xl p-8 md:p-10 relative overflow-hidden">
+                <i class="ph-fill ph-users-three absolute -top-4 -right-4 opacity-10 text-[160px]"></i>
+                
+                <div class="relative z-10 grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-2">Enquete Rápida</h3>
+                        <p class="text-emerald-300 mb-6">Queremos saber: Qual ação sustentável você pratica mais no seu dia a dia?</p>
+                        <div id="poll-container" class="space-y-3">
+                            <!-- Opções da enquete via JS -->
+                        </div>
+                    </div>
+                    <div class="hidden md:block text-center">
+                        <div class="inline-block bg-white/10 p-6 rounded-full backdrop-blur-sm">
+                            <i class="ph ph-chart-bar text-emerald-300 text-6xl"></i>
+                        </div>
+                        <p class="mt-4 text-emerald-200 text-sm max-w-xs mx-auto">
+                            Dados em tempo real da nossa comunidade.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- VIEW: ABOUT -->
+        <div id="view-about" class="hidden-view fade-in max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-2">Nossa Missão, Nossa Equipe</h2>
+                <p class="text-lg text-gray-500 max-w-2xl mx-auto">Conheça as mentes e os corações por trás do EcoLink, um projeto nascido da paixão por tecnologia e sustentabilidade.</p>
+            </div>
+
+            <!-- Missão e Visão -->
+            <div class="bg-gradient-to-br from-emerald-50 to-teal-50 p-8 rounded-2xl mb-12 border border-emerald-200">
+                <h3 class="text-2xl font-bold mb-4 text-emerald-700">Nossa Visão</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Acreditamos que a tecnologia é uma poderosa ferramenta para a mudança. O EcoLink foi criado para ser a ponte entre a comunidade escolar e a consciência ambiental, transformando pequenas ações em um grande impacto coletivo. Queremos inspirar a próxima geração de líderes sustentáveis, uma escola de cada vez.
+                </p>
+            </div>
+
+            <!-- Equipe -->
+            <div>
+                <h3 class="text-3xl font-bold text-gray-800 text-center mb-8">Conheça os Desenvolvedores</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Card de Membro -->
+                    <div class="team-card text-center bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                        <div class="w-24 h-24 rounded-full bg-slate-100 mx-auto mb-4 flex items-center justify-center"><i class="ph-fill ph-user text-4xl text-gray-400"></i></div>
+                        <h4 class="font-bold text-lg text-gray-800">João Lucas</h4>
+                        <p class="text-sm text-emerald-600 font-medium">Desenvolvedor Full-Stack</p>
+                    </div>
+                    <div class="team-card text-center bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                        <div class="w-24 h-24 rounded-full bg-slate-100 mx-auto mb-4 flex items-center justify-center"><i class="ph-fill ph-user text-4xl text-gray-400"></i></div>
+                        <h4 class="font-bold text-lg text-gray-800">Pedro Miguel</h4>
+                        <p class="text-sm text-emerald-600 font-medium">Desenvolvedor Full-Stack</p>
+                    </div>
+                    <div class="team-card text-center bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                        <div class="w-24 h-24 rounded-full bg-slate-100 mx-auto mb-4 flex items-center justify-center"><i class="ph-fill ph-user text-4xl text-gray-400"></i></div>
+                        <h4 class="font-bold text-lg text-gray-800">Rafael Medeiros</h4>
+                        <p class="text-sm text-emerald-600 font-medium">Desenvolvedor Full-Stack</p>
+                    </div>
+                    <div class="team-card text-center bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                        <div class="w-24 h-24 rounded-full bg-slate-100 mx-auto mb-4 flex items-center justify-center"><i class="ph-fill ph-user text-4xl text-gray-400"></i></div>
+                        <h4 class="font-bold text-lg text-gray-800">Alex Bruno</h4>
+                        <p class="text-sm text-emerald-600 font-medium">Desenvolvedor Full-Stack</p>
+                    </div>
+                    <div class="team-card text-center bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                        <div class="w-24 h-24 rounded-full bg-slate-100 mx-auto mb-4 flex items-center justify-center"><i class="ph-fill ph-user text-4xl text-gray-400"></i></div>
+                        <h4 class="font-bold text-lg text-gray-800">Pedro Henrique</h4>
+                        <p class="text-sm text-emerald-600 font-medium">Desenvolvedor Full-Stack</p>
+                    </div>
+                    <div class="team-card text-center bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                        <div class="w-24 h-24 rounded-full bg-slate-100 mx-auto mb-4 flex items-center justify-center"><i class="ph-fill ph-user-focus text-4xl text-gray-400"></i></div>
+                        <h4 class="font-bold text-lg text-gray-800">Ryan Marcelino</h4>
+                        <p class="text-sm text-emerald-600 font-medium">Professor Orientador</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- MENU MOBILE (Bottom) -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-t border-slate-200 grid grid-cols-4 p-2 z-40 pb-5">
+        <button onclick="switchTab('home')" class="flex flex-col items-center gap-1 text-xs font-medium text-gray-400 hover:text-emerald-600 mobile-btn" id="mob-home">
+            <i class="ph ph-house text-2xl"></i> Início
+        </button>
+        <button onclick="switchTab('feed')" class="flex flex-col items-center gap-1 text-xs font-medium text-gray-400 hover:text-emerald-600 mobile-btn" id="mob-feed">
+            <i class="ph ph-recycle text-2xl"></i> Mural
+        </button>
+        <button onclick="switchTab('ranking')" class="flex flex-col items-center gap-1 text-xs font-medium text-gray-400 hover:text-emerald-600 mobile-btn" id="mob-ranking">
+            <i class="ph ph-trophy text-2xl"></i> Ranking
+        </button>
+        <button onclick="switchTab('about')" class="flex flex-col items-center gap-1 text-xs font-medium text-gray-400 hover:text-emerald-600 mobile-btn" id="mob-about">
+            <i class="ph ph-users text-2xl"></i> Sobre
+        </button>
+    </div>
+
+    <!-- MODAL FORMULÁRIO -->
+    <div id="modal-form" class="hidden-view fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden slide-up">
+            <div class="bg-emerald-600 p-4 text-white flex justify-between items-center">
+                <h3 class="font-bold text-lg">Registrar Nova Ação</h3>
+                <button onclick="closeModal()" class="text-emerald-100 hover:text-white hover:bg-emerald-700 p-1 rounded-full"><i class="ph-bold ph-x text-lg"></i></button>
+            </div>
+            <form onsubmit="handleAddPost(event)" class="p-6 space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Título da Ação</label>
+                    <input id="input-title" required type="text" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none" placeholder="Ex: Coleta de Pilhas">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Seu Nome / Turma</label>
+                    <input id="input-author" required type="text" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none" placeholder="Ex: Maria Silva - 3º Ano">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Escola</label>
+                    <select id="input-school" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none bg-white">
+                        <option value="ECIT Elpidio de Almeida">ECIT Elpidio de Almeida</option>
+                        <option value="Escola Estadual Prata">Escola Estadual Prata</option>
+                        <option value="Cidadã Integral Técnica">Cidadã Integral Técnica</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Descrição</label>
+                    <textarea id="input-desc" required rows="3" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none resize-none" placeholder="Descreva brevemente o que foi feito..."></textarea>
+                </div>
+                <button type="submit" class="w-full bg-emerald-600 text-white py-3 rounded-lg font-bold hover:bg-emerald-700 shadow-md hover:shadow-lg hover:-translate-y-0.5">
+                    Publicar Ação
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Lógica da Aplicação -->
+    <script src="app.js" defer></script>
+</body>
+</html>

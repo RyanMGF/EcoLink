@@ -1,0 +1,23 @@
+body { 
+    font-family: 'Inter', sans-serif; 
+}
+
+/* Animações Simples */
+.fade-in { animation: fadeIn 0.5s ease-in-out; }
+.slide-up { animation: slideUp 0.4s ease-out; }
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes slideUp {
+    from { transform: translateY(15px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Utilitários extras */
+/* CORREÇÃO: Adicionado !important para garantir que esconda sobrepondo o flex do Tailwind */
+.hidden-view { display: none !important; }
+
+.active-tab { color: #059669; } /* Emerald-600 */
+.poll-bar { transition: width 1s cubic-bezier(0.4, 0, 0.2, 1); }
