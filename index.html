@@ -71,10 +71,10 @@
                         <i class="ph ph-recycle"></i>
                         <span>Projeto Modelo • ECIT Elpidio de Almeida</span>
                     </div>
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+                    <h1 class="text-4xl sm:text-5xl font-bold mb-4 leading-tight">
                         Conectando Escolas,<br />Inspirando Ações.
                     </h1>
-                    <p class="text-lg text-emerald-100 mb-8 max-w-xl">
+                    <p class="text-base sm:text-lg text-emerald-100 mb-8 max-w-xl">
                         O <strong>EcoLink</strong> é o seu portal escolar para compartilhar boas práticas de sustentabilidade. 
                         Transforme sua escola e ajude o planeta, uma ação de cada vez.
                     </p>
@@ -131,13 +131,28 @@
                     Orientador: Ryan Marcelino Gomes Felix dos Santos.
                 </div>
             </div>
+
+            <!-- Seção QR Code -->
+            <div class="hidden md:flex mt-10 bg-white p-8 rounded-xl border border-slate-200 items-center gap-8">
+                <!-- Placeholder para o QR Code -->
+                <div class="w-40 h-40 bg-slate-100 rounded-lg flex items-center justify-center border-2 border-dashed border-slate-300 shrink-0">
+                    <i class="ph-fill ph-qr-code text-5xl text-slate-400"></i>
+                    <img src="frame.png" alt="">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Acesse no seu Celular!</h3>
+                    <p class="text-gray-600 max-w-md">
+                        Aponte a câmera do seu celular para o QR Code e leve o EcoLink com você. Registre suas boas práticas de qualquer lugar, a qualquer hora.
+                    </p>
+                </div>
+            </div>
         </div>
 
         <!-- VIEW: FEED -->
         <div id="view-feed" class="hidden-view fade-in max-w-3xl mx-auto">
             <div class="flex justify-between items-center mb-8">
-                <div>
-                    <h2 class="text-3xl font-bold text-gray-800">Mural de Boas Práticas</h2>
+                <div class="flex-1">
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-800">Mural de Boas Práticas</h2>
                     <p class="text-gray-500 mt-1">Veja o que as escolas estão fazendo pelo planeta.</p>
                 </div>
                 <button onclick="openModal()" class="bg-emerald-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-emerald-700 flex items-center gap-2 shadow-md hover:shadow-lg hover:-translate-y-0.5">
@@ -163,8 +178,8 @@
         <!-- VIEW: RANKING -->
         <div id="view-ranking" class="hidden-view fade-in max-w-4xl mx-auto">
             <div class="text-center mb-10">
-                <h2 class="text-3xl font-bold text-gray-800 mb-2">Ranking de Engajamento</h2>
-                <p class="text-gray-500">Escolas que mais contribuem para um futuro sustentável.</p>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Ranking de Engajamento</h2>
+                <p class="text-gray-500 max-w-lg mx-auto">Escolas que mais contribuem para um futuro sustentável.</p>
             </div>
 
             <div id="ranking-container" class="grid gap-4">
@@ -177,7 +192,7 @@
                 
                 <div class="relative z-10 grid md:grid-cols-2 gap-8 items-center">
                     <div>
-                        <h3 class="text-2xl font-bold mb-2">Enquete Rápida</h3>
+                        <h3 class="text-xl md:text-2xl font-bold mb-2">Enquete Rápida</h3>
                         <p class="text-emerald-300 mb-6">Queremos saber: Qual ação sustentável você pratica mais no seu dia a dia?</p>
                         <div id="poll-container" class="space-y-3">
                             <!-- Opções da enquete via JS -->
@@ -198,8 +213,8 @@
         <!-- VIEW: ABOUT -->
         <div id="view-about" class="hidden-view fade-in max-w-4xl mx-auto">
             <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold text-gray-800 mb-2">Nossa Missão, Nossa Equipe</h2>
-                <p class="text-lg text-gray-500 max-w-2xl mx-auto">Conheça as mentes e os corações por trás do EcoLink, um projeto nascido da paixão por tecnologia e sustentabilidade.</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Nossa Missão, Nossa Equipe</h2>
+                <p class="text-base md:text-lg text-gray-500 max-w-2xl mx-auto">Conheça as mentes e os corações por trás do EcoLink, um projeto nascido da paixão por tecnologia e sustentabilidade.</p>
             </div>
 
             <!-- Missão e Visão -->
@@ -212,7 +227,7 @@
 
             <!-- Equipe -->
             <div>
-                <h3 class="text-3xl font-bold text-gray-800 text-center mb-8">Conheça os Desenvolvedores</h3>
+                <h3 class="text-2xl md:text-3xl font-bold text-gray-800 text-center mb-8">Conheça os Desenvolvedores</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Card de Membro -->
                     <div class="team-card text-center bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
